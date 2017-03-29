@@ -4,6 +4,7 @@
    {
      "name" : "Front Network",
      "children" : [
+      { "name" : "Configuration", "children" : [{ "name" : "Phy" }]},
       { "name" : "Front Mic 1" },
       { "name" : "Front Mic 2" },
       { "name" : "Front Mic 3" },
@@ -16,6 +17,7 @@
    {
      "name" : "Rear Network",     
      "children" : [
+      { "name" : "Configuration", "children" : [{ "name" : "Phy" }]},
       { "name" : "Rear Mic 1" },
       { "name" : "Rear Mic 2" },
       { "name" : "Rear Mic 3" },
@@ -29,7 +31,8 @@
      "name" : "Switch",     
      "children" : [
       { "name" : "Front Network" },
-      { "name" : "Rear Network" }
+      { "name" : "Rear Network" },
+      { "name" : "Configuration", "children" : [{ "name" : "Phy" }]},
      ] 
    }    
    ]
