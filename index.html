@@ -8,15 +8,15 @@
   stroke-width: 1.5px;
 }
 
-#licensing {
+#stereo {
   fill: green;
 }
 
-.link.licensing {
+.link.mono {
   stroke: green;
 }
 
-.link.resolved {
+.link.ethernet {
   stroke-dasharray: 0,2 1;
 }
 
@@ -55,8 +55,8 @@ var links = [
   {source: "Rear Line In 2", target: "Rear Network", type: "stereo"},
   {source: "Rear Network", target: "Rear Amp", type: "stereo"},
   
-  {source: "Front Network", target: "AVB Switch", type: "Ethernet"},
-  {source: "Rear Network", target: "AVB Switch", type: "Ethernet"}
+  {source: "Front Network", target: "AVB Switch", type: "ethernet"},
+  {source: "Rear Network", target: "AVB Switch", type: "ethernet"}
   
 ];
 
