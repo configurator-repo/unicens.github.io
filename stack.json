@@ -52,7 +52,29 @@
       "children": [
         {
           "name": "Configuration",
-          "children": [ { "name": "Phy" } ]
+          "children": [
+            {
+              "name": "Phy",
+              "children": [
+                {
+                  "name": "UTP",
+                  "size": 1356
+                },
+                {
+                  "name": "RING Topology",
+                  "size": 1356
+                }
+              ]
+            },
+            {
+              "name": "Bandwidth",
+              "children": [
+                { "name": "35 MBit from 150 Mbit" },
+                { "name": "QOS OFF" }
+              ]
+            }
+
+          ]
         },
         { "name": "Rear Mic 1" },
         { "name": "Rear Mic 2" },
