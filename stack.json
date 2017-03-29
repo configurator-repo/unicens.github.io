@@ -38,7 +38,18 @@
 
           ]
         },
-        { "name": "Front Mic 1" },
+        {
+          "name": "Front Mic 1",
+          "children": [
+            {
+              "name": "Network Port",
+              "children": [
+                { "name": "48KHz Clock" },
+                { "name": "Locked" }
+              ]
+            }
+          ]
+        },
         { "name": "Front Mic 2" },
         { "name": "Front Mic 3" },
         { "name": "Front Mic 4" },
