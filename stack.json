@@ -1,11 +1,36 @@
 {
- "name": "unicens",
+ "name": "Switch",
  "children": [
    {
-     "name" : "Front Network"    
+     "name" : "Front Network",
+     "children" : [
+      { "name" : "Front Mic 1" },
+      { "name" : "Front Mic 2" },
+      { "name" : "Front Mic 3" },
+      { "name" : "Front Mic 4" },      
+      { "name" : "Front Line In 1" },
+      { "name" : "Front Line In 2" },
+      { "name" : "Front Amp" }
+     ]
    },
    {
-     "name" : "Rear Network"    
-   }  
+     "name" : "Rear Network",     
+     "children" : [
+      { "name" : "Rear Mic 1" },
+      { "name" : "Rear Mic 2" },
+      { "name" : "Rear Mic 3" },
+      { "name" : "Rear Mic 4" },      
+      { "name" : "Rear Line In 1" },
+      { "name" : "Rear Line In 2" },
+      { "name" : "Rear Amp" }
+     ] 
+   },
+   {
+     "name" : "Switch",     
+     "children" : [
+      { "name" : "Front Network" },
+      { "name" : "Rear Network" }
+     ] 
+   }    
    ]
 }
