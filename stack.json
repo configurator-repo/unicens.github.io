@@ -1,6 +1,7 @@
 {
  "name": "Switch",
  "children": [
+   { "name" : "Configuration", "children" : [{ "name" : "Phy" }]},  
    {
      "name" : "Front Network",
      "children" : [
@@ -26,14 +27,6 @@
       { "name" : "Rear Line In 2" },
       { "name" : "Rear Amp" }
      ] 
-   },
-   {
-     "name" : "Switch",     
-     "children" : [
-      { "name" : "Front Network" },
-      { "name" : "Rear Network" },
-      { "name" : "Configuration", "children" : [{ "name" : "Phy" }]},
-     ] 
-   }    
+   } 
    ]
 }
