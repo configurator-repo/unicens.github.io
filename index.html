@@ -8,15 +8,15 @@
   stroke-width: 1.5px;
 }
 
-#stereo {
+#sync {
   fill: green;
 }
 
-.link.mono {
+.link.async {
   stroke: green;
 }
 
-.link.ethernet {
+.link.network {
   stroke-dasharray: 0,2 1;
 }
 
@@ -39,24 +39,24 @@ text {
 
 // http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/
 var links = [
-  {source: "Front Mic 1", target: "Front Network", type: "mono"},
-  {source: "Front Mic 2", target: "Front Network", type: "mono"},
-  {source: "Front Mic 3", target: "Front Network", type: "mono"},
-  {source: "Front Mic 4", target: "Front Network", type: "mono"},  
-  {source: "Front Line In 1", target: "Front Network", type: "stereo"},
-  {source: "Front Line In 2", target: "Front Network", type: "stereo"},
-  {source: "Front Network", target: "Front Amp", type: "stereo"},
+  {source: "Front Mic 1", target: "Front Network", type: "sync"},
+  {source: "Front Mic 2", target: "Front Network", type: "sync"},
+  {source: "Front Mic 3", target: "Front Network", type: "sync"},
+  {source: "Front Mic 4", target: "Front Network", type: "sync"},  
+  {source: "Front Line In 1", target: "Front Network", type: "sync"},
+  {source: "Front Line In 2", target: "Front Network", type: "sync"},
+  {source: "Front Network", target: "Front Amp", type: "sync"},
   
-  {source: "Rear Mic 1", target: "Rear Network", type: "mono"},
-  {source: "Rear Mic 2", target: "Rear Network", type: "mono"},
-  {source: "Rear Mic 3", target: "Rear Network", type: "mono"},
-  {source: "Rear Mic 4", target: "Rear Network", type: "mono"},  
-  {source: "Rear Line In 1", target: "Rear Network", type: "stereo"},
-  {source: "Rear Line In 2", target: "Rear Network", type: "stereo"},
-  {source: "Rear Network", target: "Rear Amp", type: "stereo"},
+  {source: "Rear Mic 1", target: "Rear Network", type: "sync"},
+  {source: "Rear Mic 2", target: "Rear Network", type: "sync"},
+  {source: "Rear Mic 3", target: "Rear Network", type: "sync"},
+  {source: "Rear Mic 4", target: "Rear Network", type: "sync"},  
+  {source: "Rear Line In 1", target: "Rear Network", type: "sync"},
+  {source: "Rear Line In 2", target: "Rear Network", type: "sync"},
+  {source: "Rear Network", target: "Rear Amp", type: "sync"},
   
-  {source: "Front Network", target: "AVB Switch", type: "ethernet"},
-  {source: "Rear Network", target: "AVB Switch", type: "ethernet"}
+  {source: "Front Network", target: "Network Switch", type: "network"},
+  {source: "Rear Network", target: "Network Switch", type: "network"}
   
 ];
 
@@ -86,7 +86,7 @@ var svg = d3.select("body").append("svg")
 
 // Per-type markers, as they don't inherit styles.
 svg.append("defs").selectAll("marker")
-    .data(["stereo", "mono", "ethernet"])
+    .data(["sync", "async", "network"])
   .enter().append("marker")
     .attr("id", function(d) { return d; })
     .attr("viewBox", "0 -5 10 10")
