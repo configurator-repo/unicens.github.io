@@ -1,32 +1,67 @@
 {
- "name": "Switch",
- "children": [
-   { "name" : "Configuration", "children" : [{ "name" : "Phy" }]},  
-   {
-     "name" : "Front Network",
-     "children" : [
-      { "name" : "Configuration", "children" : [{ "name" : "Phy" }]},
-      { "name" : "Front Mic 1" },
-      { "name" : "Front Mic 2" },
-      { "name" : "Front Mic 3" },
-      { "name" : "Front Mic 4" },      
-      { "name" : "Front Line In 1" },
-      { "name" : "Front Line In 2" },
-      { "name" : "Front Amp" }
-     ]
-   },
-   {
-     "name" : "Rear Network",     
-     "children" : [
-      { "name" : "Configuration", "children" : [{ "name" : "Phy" }]},
-      { "name" : "Rear Mic 1" },
-      { "name" : "Rear Mic 2" },
-      { "name" : "Rear Mic 3" },
-      { "name" : "Rear Mic 4" },      
-      { "name" : "Rear Line In 1" },
-      { "name" : "Rear Line In 2" },
-      { "name" : "Rear Amp" }
-     ] 
-   } 
-   ]
+  "name": "Switch",
+  "children": [
+    {
+      "name": "Configuration",
+      "children": [
+        { "name": "IP Management" },
+        { "name": "MAC Filtering" },
+        { "name": "VLAN Configuration" }
+      ]
+    },
+    {
+      "name": "Front Network",
+      "children": [
+        {
+          "name": "Configuration",
+          "children": [
+            {
+              "name": "Phy",
+              "children": [
+                {
+                  "name": "UTP",
+                  "size": 1356
+                },
+                {
+                  "name": "RING Topology",
+                  "size": 1356
+                }
+              ]
+            },
+            {
+              "name": "Bandwidth",
+              "children": [
+                { "name": "85 MBit from 150 Mbit" },
+                { "name": "QOS ON" }
+              ]
+            }            
+
+          ]
+        },
+        { "name": "Front Mic 1" },
+        { "name": "Front Mic 2" },
+        { "name": "Front Mic 3" },
+        { "name": "Front Mic 4" },
+        { "name": "Front Line In 1" },
+        { "name": "Front Line In 2" },
+        { "name": "Front Amp" }
+      ]
+    },
+    {
+      "name": "Rear Network",
+      "children": [
+        {
+          "name": "Configuration",
+          "children": [ { "name": "Phy" } ]
+        },
+        { "name": "Rear Mic 1" },
+        { "name": "Rear Mic 2" },
+        { "name": "Rear Mic 3" },
+        { "name": "Rear Mic 4" },
+        { "name": "Rear Line In 1" },
+        { "name": "Rear Line In 2" },
+        { "name": "Rear Amp" }
+      ]
+    }
+  ]
 }
