@@ -99,7 +99,7 @@ links.forEach(function(link) {
 var width = 512,
     height = 512;
 
-var force = d3.layout.chord()
+var force = d3.layout.force()
     .nodes(d3.values(nodes))
     .links(links)
     .size([width, height])
