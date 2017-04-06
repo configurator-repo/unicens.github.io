@@ -14,6 +14,7 @@
 
 .node text {
   font: 10px sans-serif;
+  fill: red;
 }
 
 .link {
@@ -24,7 +25,7 @@
 
 </style>
 <body>
-<script src="//d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="d3.min.js"></script>
 <script type="text/javascript" src="d3.geom.js"></script>
 <script type="text/javascript" src="d3.layout.js"></script>
 <script>
@@ -45,13 +46,105 @@ var vis = d3.select("body").append("svg:svg")
     .attr("width", w)
     .attr("height", h);
 
-d3.json("configuration.json", function(json) {
+var root = 
+{
+ "name": "configuration",
+ "children": [
+  {
+   "name": "nodes",
+   "children": [
+    {
+     "name": "amp",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "mic1",
+     "children": [
+      {"name": "BetweennessCentrality", "size": 3534},
+      {"name": "LinkDistance", "size": 5731},
+      {"name": "MaxFlowMinCut", "size": 7840},
+      {"name": "ShortestPaths", "size": 5914},
+      {"name": "SpanningTree", "size": 3416}
+     ]
+    },
+    {
+     "name": "mic2",
+     "children": [
+      {"name": "AspectRatioBanker", "size": 7074}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "line in 1",
+   "children": [
+    {"name": "Easing", "size": 17010},
+    {"name": "FunctionSequence", "size": 5842},
+    {
+     "name": "interpolate",
+     "children": [
+      {"name": "ArrayInterpolator", "size": 1983},
+      {"name": "ColorInterpolator", "size": 2047},
+      {"name": "DateInterpolator", "size": 1375},
+      {"name": "Interpolator", "size": 8746},
+      {"name": "MatrixInterpolator", "size": 2202},
+      {"name": "NumberInterpolator", "size": 1382},
+      {"name": "ObjectInterpolator", "size": 1629},
+      {"name": "PointInterpolator", "size": 1675},
+      {"name": "RectangleInterpolator", "size": 2042}
+     ]
+    },
+    {"name": "ISchedulable", "size": 1041},
+    {"name": "Parallel", "size": 5176},
+    {"name": "Pause", "size": 449},
+    {"name": "Scheduler", "size": 5593},
+    {"name": "Sequence", "size": 5534},
+    {"name": "Transition", "size": 9201},
+    {"name": "Transitioner", "size": 19975},
+    {"name": "TransitionEvent", "size": 1116},
+    {"name": "Tween", "size": 6006}
+   ]
+  },
+  {
+   "name": "line in 2",
+   "children": [
+    {
+     "name": "converters",
+     "children": [
+      {"name": "Converters", "size": 721},
+      {"name": "DelimitedTextConverter", "size": 4294},
+      {"name": "GraphMLConverter", "size": 9800},
+      {"name": "IDataConverter", "size": 1314},
+      {"name": "JSONConverter", "size": 2220}
+     ]
+    },
+    {"name": "DataField", "size": 1759},
+    {"name": "DataSchema", "size": 2165},
+    {"name": "DataSet", "size": 586},
+    {"name": "DataSource", "size": 3331},
+    {"name": "DataTable", "size": 772},
+    {"name": "DataUtil", "size": 3322}
+   ]
+  }
+]
+}
+
+update();
+
+/*    
+d3.json("./configuration.json", function(json) {
   root = json;
   root.fixed = true;
   root.x = w / 2;
   root.y = h / 2 - 80;
   update();
 });
+*/
 
 function update() {
   var nodes = flatten(root),
@@ -80,7 +173,7 @@ function update() {
 
   // Update the nodes…
   node = vis.selectAll("circle.node")
-      .data(nodes, function(d) { return d.id; })
+      .data(nodes, function(d) { return d.id; })      
       .style("fill", color);
 
   node.transition()
@@ -91,15 +184,11 @@ function update() {
       .attr("class", "node")
       .attr("cx", function(d) { return d.x; })
       .attr("cy", function(d) { return d.y; })
-      .attr("r", function(d) { return d.children ? 4.5 : Math.sqrt(d.size) / 10; })
+      .attr("r", function(d) { return d.children ? 4.5 : Math.sqrt(d.size) / 10; })      
       .style("fill", color)
-      .append("text")
-      .attr("x", 8)
-      .attr("y", ".31em")
-      .text(function(d) { return d.name; })
       .on("click", click)
-      .call(force.drag);    
- 
+      .call(force.drag);
+
   // Exit any old nodes.
   node.exit().remove();
 }
@@ -112,6 +201,7 @@ function tick() {
 
   node.attr("cx", function(d) { return d.x; })
       .attr("cy", function(d) { return d.y; });
+      
 }
 
 // Color leaf nodes orange, and packages white or blue.
