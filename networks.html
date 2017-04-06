@@ -37,8 +37,6 @@ text {
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-var menu = ["button 1", "button 2", "button 3", "button 4"]
-
 var links = [
   {source: "Front Mic 1", target: "Front Network", type: "sync"},
   {source: "Front Mic 2", target: "Front Network", type: "sync"},
@@ -62,8 +60,7 @@ var links = [
 
 var nodes = {};
 
-// Compute the distinct 
-  from the links.
+// Compute the distinct from the links.
 links.forEach(function(link) {
   link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
   link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
