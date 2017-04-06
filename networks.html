@@ -39,15 +39,25 @@ text {
 
 var menu = ["button 1", "button 2", "button 3", "button 4"]
 
- 
-// http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/
 var links = [
-  {source: "i2s.mic1", target: "most.net1", type: "i2s"},
-  {source: "i2c.cp", target: "most.net1", type: "i2c"},
-  {source: "mic1", target: "amp", type: "sync"},
-  {source: "mic2", target: "amp", type: "sync"},
-  {source: "mic3", target: "amp", type: "sync"},
-  {source: "mic4", target: "amp", type: "sync"}
+  {source: "Front Mic 1", target: "Front Network", type: "sync"},
+  {source: "Front Mic 2", target: "Front Network", type: "sync"},
+  {source: "Front Mic 3", target: "Front Network", type: "sync"},
+  {source: "Front Mic 4", target: "Front Network", type: "sync"},  
+  {source: "Front Line In 1", target: "Front Network", type: "sync"},
+  {source: "Front Line In 2", target: "Front Network", type: "sync"},
+  {source: "Front Network", target: "Front Amp", type: "sync"},
+  
+  {source: "Rear Mic 1", target: "Rear Network", type: "sync"},
+  {source: "Rear Mic 2", target: "Rear Network", type: "sync"},
+  {source: "Rear Mic 3", target: "Rear Network", type: "sync"},
+  {source: "Rear Mic 4", target: "Rear Network", type: "sync"},  
+  {source: "Rear Line In 1", target: "Rear Network", type: "sync"},
+  {source: "Rear Line In 2", target: "Rear Network", type: "sync"},
+  {source: "Rear Network", target: "Rear Amp", type: "sync"},
+  
+  {source: "Front Network", target: "Network Switch", type: "network"},
+  {source: "Rear Network", target: "Network Switch", type: "network"}  
 ];
 
 var nodes = {};
