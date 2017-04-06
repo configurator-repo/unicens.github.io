@@ -64,7 +64,7 @@ var links = [
   {source: "Front Line In 2 I2C", target: "Front Line In 2", type: "control"},
   {source: "Front Line In 2 I2S", target: "Front Line In 2", type: "streaming"},  
   {source: "Front Line In 2", target: "Front Network", type: "sync"},
-  {source: "Front Network", target: "Front Amp", type: "sync"},
+  {source: "Front Network", target: "Front Amp", type: "sync"},    
   
   {source: "Rear Mic 1", target: "Rear Network", type: "sync"},
   {source: "Rear Mic 2", target: "Rear Network", type: "sync"},
@@ -75,7 +75,16 @@ var links = [
   {source: "Rear Network", target: "Rear Amp", type: "sync"},
   
   {source: "Front Network", target: "Network Switch", type: "network"},
-  {source: "Rear Network", target: "Network Switch", type: "network"}  
+  {source: "Rear Network", target: "Network Switch", type: "network"},
+    
+  {source: "Front Mic 1", target: "Front Mic 2", type: "power"},
+  {source: "Front Mic 2", target: "Front Mic 3", type: "power"},
+  {source: "Front Mic 3", target: "Front Mic 4", type: "power"},
+  {source: "Front Mic 4", target: "Front Amp", type: "power"},
+  {source: "Rear Mic 1", target: "Rear Mic 2", type: "power"},
+  {source: "Rear Mic 2", target: "Rear Mic 3", type: "power"},
+  {source: "Rear Mic 3", target: "Rear Mic 4", type: "power"},
+  {source: "Rear Mic 4", target: "Rear Amp", type: "power"}  
 ];
 
 var nodes = {};
